@@ -1,0 +1,10 @@
+@import "normalize";
+@import "main";
+@import "typography";
+@import "variables";
+
+.container {
+	max-width: 1600px;
+	margin: auto;
+	padding: 1rem;
+}

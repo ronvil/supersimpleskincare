@@ -1,0 +1,113 @@
+:root { 
+  font-size: 16px; 
+  --base-font-size: 1rem; 
+  --scale: 1.125;
+
+  --p-size: var(--base-font-size);
+	--sub-size: calc(var(--base-font-size) / var(--scale));
+  --h6-size: calc(var(--base-font-size) * var(--scale)); 
+  --h5-size: calc(var(--h6-size) * var(--scale)); 
+  --h4-size: calc(var(--h5-size) * var(--scale)); 
+  --h3-size: calc(var(--h4-size) * var(--scale)); 
+  --h2-size: calc(var(--h3-size) * var(--scale)); 
+  --h1-size: calc(var(--h2-size) * var(--scale));
+
+	--sub-size: calc(var(--base-font-size) / var(--scale));
+  --super-size: calc(var(--h1-size) * var(--scale));
+
+	@include for-tablet-landscape-up {
+		--scale: 1.200;
+	}
+
+	@include for-big-desktop-up {
+		--base-font-size: 1.125rem;
+	}
+
+}
+
+@mixin super-size {
+  font-size: var(--super-size);
+  line-height: .9;
+}
+
+@mixin sub-size {
+  font-size: var(--sub-size);
+}
+
+@mixin h1-size {
+  font-size: var(--h1-size);
+  line-height: 1;
+}
+
+@mixin h2-size {
+  font-size: var(--h2-size);
+  line-height: 1;
+}
+
+@mixin h3-size {
+  font-size: var(--h3-size);
+  line-height: 1;
+}
+
+@mixin h4-size {
+  font-size: var(--h4-size);
+  line-height: 1;
+}
+
+@mixin h5-size {
+  font-size: var(--h5-size);
+  line-height: 1;
+}
+
+@mixin h6-size {
+  font-size: var(--h6-size);
+}
+
+body {
+	color: #333;
+  font-size: var(--p-size); 
+  line-height: 1.5;
+}
+
+h6, h5, h4, h3, h2, h1 { 
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+h6 { 
+  @include h6-size;
+}
+
+h5 {
+	@include h5-size;
+}
+
+h4 { 
+  @include h4-size;
+}
+
+h3 { 
+  @include h3-size;
+}
+
+h2 { 
+  @include h2-size;
+}
+
+h1 { 
+  @include h1-size;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
