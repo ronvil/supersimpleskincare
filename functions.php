@@ -155,6 +155,29 @@ add_filter('get_the_archive_title', function ($title) {
 });
 
 
+//Lets add Open Graph Meta Info
+function insert_fb_in_head() {
+	global $post;
+	if ( !is_singular()) //if it is not a post or a page
+		return;
+		echo '<meta property="og:title" content="' . get_the_title() . '"/>';
+		echo '<meta property="og:type" content="article"/>';
+		echo '<meta property="og:url" content="' . get_permalink() . '"/>';
+		echo '<meta property="og:site_name" content="Oxfam Pilipinas"/>';
+	if(!has_post_thumbnail( $post->ID )) { //the post does not have featured image, use a default image
+		$default_image="https://oxfam.org.ph/wp-content/uploads/2022/09/oxfampilipinas-opengraph-default.jpg"; //replace this with a default image on your server or an image in your media library
+		echo '<meta property="og:image" content="' . $default_image . '"/>';
+	}
+	else{
+		$thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
+		echo '<meta property="og:image" content="' . esc_attr( $thumbnail_src[0] ) . '"/>';
+	}
+	echo "
+	";
+	}
+	add_action( 'wp_head', 'insert_fb_in_head', 5 );
+
+
 //Enqueue Scripts
 function add_theme_scripts() {
  
