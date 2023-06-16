@@ -4,9 +4,20 @@
 @import "typography";
 
 .container {
-	max-width: 1600px;
-	margin: auto;
+	margin: 0 auto;
 	padding: 1rem;
+	@include for-tablet-portrait-up {
+		max-width: 704px;
+	}
+	@include for-tablet-landscape-up {
+		max-width: 948px;
+	}
+	@include for-desktop-up {
+		max-width: 1248px;
+	}
+	@include for-big-desktop-up {
+		max-width: 1600px;
+	}
 }
 
 nav {
