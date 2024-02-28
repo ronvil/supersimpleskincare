@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&family=DM+Serif+Text:ital@0;1&display=swap');
+
 :root { 
   font-size: 16px; 
   --base-font-size: 1rem; 
@@ -22,7 +24,6 @@
 	@include for-big-desktop-up {
 		--base-font-size: 1.125rem;
 	}
-
 }
 
 @mixin super-size {
@@ -66,12 +67,21 @@
 body {
 	color: #333;
   font-size: var(--p-size); 
-  line-height: 1.5;
+  line-height: 1.25;
+  font-family: "Anek Devanagari", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
 
 h6, h5, h4, h3, h2, h1 { 
   font-weight: bold;
   margin: 1rem 0;
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 h6 { 
