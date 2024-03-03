@@ -22,3 +22,23 @@
 }());
 
 // Place any jQuery/helper plugins in here.
+(function(sidr) {
+  "use strict"
+
+  sidr.new('#menu-toggle', {
+    timing: 'ease-in-out',
+    speed: 500,
+    side: 'right',
+    onOpen: function() {
+      document.getElementById("menu-toggle").innerHTML = "<i class='fas fa-times'></i>";
+    },
+    onClose: function() {
+      document.getElementById("menu-toggle").innerHTML = "<i class='fas fa-bars'></i>";
+    },
+  });
+
+  window.onresize = function() {
+    sidr.close('sidr');
+  };
+
+})(window.sidr);

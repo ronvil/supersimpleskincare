@@ -853,6 +853,9 @@ nav ul {
   .hero .homesection__head {
     text-align: left;
   }
+  .hero .button__container {
+    text-align: left;
+  }
 }
 
 .cheatsheet__sub {
@@ -1047,4 +1050,18 @@ nav ul {
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
   text-align: center;
+}
+
+.singular__sidebar {
+  background: gray;
+}
+@media (min-width: 980px) {
+  .singular__bodycontainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .singular__contentcontainer {
+    grid-column: span 2;
+  }
 }/*# sourceMappingURL=style.css.map */

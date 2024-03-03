@@ -171,6 +171,9 @@ nav {
 		.homesection__head {
 			text-align: left;
 		}
+		.button__container {
+			text-align: left;
+		}
 	}
 }
 
@@ -333,5 +336,21 @@ nav {
 		background: rgba($color: #000, $alpha: .5);
 		color: #fff;
 		text-align: center;
+	}
+}
+
+.singular {
+	&__sidebar {
+		background: gray;
+	}
+	@include for-tablet-landscape-up {
+		&__bodycontainer {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 2rem;
+		}
+		&__contentcontainer {
+			grid-column: span 2;
+		}
 	}
 }

@@ -53,6 +53,10 @@ function remove_image_size_attributes( $html ) {
 	// Remove image size attributes from images added to a WordPress post
 	add_filter( 'image_send_to_editor', 'remove_image_size_attributes' );
 
+	
+// Add image size
+add_image_size( 'article-thumb', 568, 320 );
+
 
 // nav menus
 register_nav_menus( array(
